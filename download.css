@@ -1,0 +1,380 @@
+b, body, center, div, em, form, h1, h2, h3, h4, h5, h6, html, i, img, input, label, li, ol, p, pre, table, tbody, td, tfoot, th, u, ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  height: auto;
+  width: auto; 
+}
+td {
+  padding-left : 3px;
+}
+tr {
+  -webkit-user-select: none;
+  height: 25px;
+}
+
+b, strong {
+  font-weight: bold; }
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic; }
+
+ol, ul {
+  list-style: none; }
+
+li {
+  display: list-item; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th, td, caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left; }
+
+input {
+  background: #fff; }
+
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+/* This file defines styles for form controls. The order of rule blocks is
+ * important as there are some rules with equal specificity that rely on order
+ * as a tiebreaker. These are marked with OVERRIDE. */
+/* Default state **************************************************************/
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance),
+select,
+input[type='checkbox'],
+input[type='radio'] {
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #444;
+  font: inherit;
+  margin: 0 1px 0 0;
+  outline: none;
+  text-shadow: 0 1px 0 #f0f0f0; }
+
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance),
+select {
+  min-height: 2em;
+  min-width: 4em; }
+
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance) {
+  -webkit-padding-end: 10px;
+  -webkit-padding-start: 10px; }
+
+select {
+  -webkit-appearance: none;
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 6px;
+  /* OVERRIDE */
+  background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg==) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAQAAAA/1a6rAAAAQUlEQVR4Xu3MsQnAMBAEMI1+myf9gw0+3ASCenmu+mQn2yGn3S4Mp906DEW3CEPfzTD03QxD380w3OmIUHe9v+u9QwAt93yns5cAAAAASUVORK5CYII=) 2x), -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  background-position: right center;
+  background-repeat: no-repeat; }
+
+html[dir='rtl'] select {
+  background-position: center left; }
+
+input[type='checkbox'] {
+  height: 13px;
+  position: relative;
+  vertical-align: middle;
+  width: 13px; }
+
+input[type='radio'] {
+  /* OVERRIDE */
+  border-radius: 100%;
+  height: 15px;
+  position: relative;
+  vertical-align: middle;
+  width: 15px; }
+
+/* TODO(estade): add more types here? */
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+input[type='url'],
+input:not([type]),
+textarea {
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #444;
+  font: inherit;
+  margin: 0;
+  /* Use min-height to accommodate addditional padding for touch as needed. */
+  min-height: 2em;
+  padding: 3px;
+  outline: none;
+  /* For better alignment between adjacent buttons and inputs. */
+  padding-bottom: 4px; }
+
+input[type='search'] {
+  -webkit-appearance: textfield;
+  /* NOTE: Keep a relatively high min-width for this so we don't obscure the end
+   * of the default text in relatively spacious languages (i.e. German). */
+  min-width: 160px; }
+
+/* Remove when https://bugs.webkit.org/show_bug.cgi?id=51499 is fixed.
+ * TODO(dbeam): are there more types that would benefit from this? */
+input[type='search']::-webkit-textfield-decoration-container {
+  direction: inherit; }
+
+/* Checked ********************************************************************/
+input[type='checkbox']:checked::before {
+  -webkit-user-select: none;
+  background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAaElEQVR4Xl3PIQoCQQCF4Y8JW42D1bDZ4iVEjDbxFpstYhC7eIVBZHkXFGw734sv/TqDQQ8Xb1udja/I8igeIm7Aygj2IpoKTGZnVRNxAHYi4iPiDlA9xX+aNQDFySziqDN6uSp6y7ofEMwZ05uUZRkAAAAASUVORK5CYII=) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAQAAABuvaSwAAAAvElEQVR4XrXPMUrDYBzG4UeRZnAQnFxq3XT3AsVABm8QPIHQIeAJuoqb2s1BcHAIin4HVLqEvx9NQgb5rc/wvn4mNBUbqlKDcezCp6Qexxx7lbapx/CBe6mrHsYrKXQ7hKtIre1nOD/W9eiQiK80inis680JEc+1kien+TEfzom4sJG2aZXxmG9LIqaRerohx6V2J72zl2NY2OTUgxm7MEU25sURfZg4590Zw5iFZ8mXS0ZwN+eaPjyh/8O/H7bzPJ5NOo0AAAAASUVORK5CYII=) 2x);
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%; }
+
+input[type='radio']:checked::before {
+  background-color: #666;
+  border-radius: 100%;
+  bottom: 3px;
+  content: '';
+  display: block;
+  left: 3px;
+  position: absolute;
+  right: 3px;
+  top: 3px; }
+
+/* Hover **********************************************************************/
+:enabled:hover:-webkit-any(select,
+input[type='checkbox'],
+input[type='radio'],
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance)) {
+  background-image: -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  color: black; }
+
+:enabled:hover:-webkit-any(select) {
+  /* OVERRIDE */
+  background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg==) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAQAAAA/1a6rAAAAQUlEQVR4Xu3MsQnAMBAEMI1+myf9gw0+3ASCenmu+mQn2yGn3S4Mp906DEW3CEPfzTD03QxD380w3OmIUHe9v+u9QwAt93yns5cAAAAASUVORK5CYII=) 2x), -webkit-linear-gradient(#f0f0f0, #f0f0f0 38%, #e0e0e0); }
+
+/* Active *********************************************************************/
+:enabled:active:-webkit-any(select,
+input[type='checkbox'],
+input[type='radio'],
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance)) {
+  background-image: -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7);
+  box-shadow: none;
+  text-shadow: none; }
+
+:enabled:active:-webkit-any(select) {
+  /* OVERRIDE */
+  background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAAUklEQVQY02P4z0AMRGZGMaShwCisyhITmb8huMzfEhOxKvuvsGAh208Ik+3ngoX/FbBbClcIUcSAw21QhXxfIIrwKAMpfNsEUYRXGVCEFc6CQwBqq4CCCtU4VgAAAABJRU5ErkJggg==) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAQCAQAAAA/1a6rAAAAQUlEQVR4Xu3MsQnAMBAEMI1+myf9gw0+3ASCenmu+mQn2yGn3S4Mp906DEW3CEPfzTD03QxD380w3OmIUHe9v+u9QwAt93yns5cAAAAASUVORK5CYII=) 2x), -webkit-linear-gradient(#e7e7e7, #e7e7e7 38%, #d7d7d7); }
+
+/* Disabled *******************************************************************/
+:disabled:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance),
+select:disabled {
+  background-image: -webkit-linear-gradient(#f1f1f1, #f1f1f1 38%, #e6e6e6);
+  border-color: rgba(80, 80, 80, 0.2);
+  box-shadow: 0 1px 0 rgba(80, 80, 80, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #aaa; }
+
+select:disabled {
+  /* OVERRIDE */
+  background-image: -webkit-image-set(url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAICAQAAACxSAwfAAAASklEQVQY02P4z0AMRGZGMaShwCisyhITG/4jw8RErMr+KyxYiFC0YOF/BeyWIikEKWLA4Ta4QogiPMpACt82QRThVQYUYYWz4BAAGr6Ii6kEPacAAAAASUVORK5CYII=) 1x, url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAQCAQAAADQF8WVAAAARElEQVR4Xu3MsQ0AIAwEsYx+m4fySsgLOuTe1Re9z4De4DzbdVDnmZ0ENcrsZJVkdoIKMzurMLOzSjNhlWfCapBlfpZbeMFeGdxKIEQAAAAASUVORK5CYII=) 2x), -webkit-linear-gradient(#f1f1f1, #f1f1f1 38%, #e6e6e6); }
+
+input:disabled:-webkit-any([type='checkbox'],
+[type='radio']) {
+  opacity: .75; }
+
+input:disabled:-webkit-any([type='password'],
+[type='search'],
+[type='text'],
+[type='url'],
+:not([type])) {
+  color: #999; }
+
+/* Focus **********************************************************************/
+:enabled:focus:-webkit-any(select,
+input[type='checkbox'],
+input[type='number'],
+input[type='password'],
+input[type='radio'],
+input[type='search'],
+input[type='text'],
+input[type='url'],
+input:not([type]),
+:-webkit-any(button,
+input[type='button'],
+input[type='submit']):not(.custom-appearance)) {
+  /* OVERRIDE */
+  -webkit-transition: border-color 200ms;
+  /* We use border color because it follows the border radius (unlike outline).
+   * This is particularly noticeable on mac. */
+  border-color: #4d90fe;
+  outline: none; }
+
+/* Action links ***************************************************************/
+[is='action-link'] {
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none; }
+
+[is='action-link']:hover {
+  text-decoration: underline; }
+
+[is='action-link']:active {
+  color: #052577;
+  text-decoration: underline; }
+
+[is='action-link'][disabled] {
+  color: #999;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none; }
+
+[is='action-link'].no-outline {
+  outline: none; }
+
+/* Checkbox/radio helpers ******************************************************
+ *
+ * .checkbox and .radio classes wrap labels. Checkboxes and radios should use
+ * these classes with the markup structure:
+ *
+ *   <div class="checkbox">
+ *     <label>
+ *       <input type="checkbox"></input>
+ *       <span>
+ *     </label>
+ *   </div>
+ */
+:-webkit-any(.checkbox, .radio) label {
+  /* Don't expand horizontally: <http://crbug.com/112091>. */
+  align-items: center;
+  display: inline-flex;
+  padding-bottom: 7px;
+  padding-top: 7px; }
+
+:-webkit-any(.checkbox, .radio) label input {
+  flex-shrink: 0; }
+
+:-webkit-any(.checkbox, .radio) label input ~ span {
+  -webkit-margin-start: 0.6em;
+  -webkit-user-select: none;
+  /* Make sure long spans wrap at the same horizontal position they start. */
+  display: block; }
+
+:-webkit-any(.checkbox, .radio) label:hover {
+  color: black; }
+
+label > input:disabled:-webkit-any([type='checkbox'], [type='radio']) ~ span {
+  color: #999; }
+
+extensionview {
+  display: inline-block;
+  height: 300px;
+  width: 300px; }
+
+h1, h2, h3 {
+  -webkit-user-select: none;
+  font-weight: normal;
+  line-height: 1; }
+
+button, label {
+  cursor: pointer; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+body {
+  color: #303942;
+  font-family: 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  font-size: 85%; }
+
+.content-wrapper {
+  box-sizing: border-box;
+  min-width: 565px;
+  padding-left: 23px;
+  padding-top: 55px;
+  margin-right: 23px; }
+  .content-wrapper header {
+    background-image: -webkit-linear-gradient(white, white 40%, rgba(255, 255, 255, 0.92));
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 23px;
+    margin: 0;
+    padding: 21px 0 13px;
+    z-index: 16;
+    min-width: 565px; }
+    .content-wrapper header h1.header {
+      font-size: 1.5em; }
+    .content-wrapper header::after {
+      -webkit-margin-end: 20px;
+      background-color: #eee;
+      content: ' ';
+      display: block;
+      height: 1px;
+      position: relative;
+      top: 13px; }
+    .content-wrapper header button {
+      position: absolute;
+      right: 20px;
+      top: 20px; }
+    .content-wrapper header .saved {
+      position: absolute;
+      top: 25px;
+      right: 120px;
+      opacity: 1;
+      visibility: hidden;
+      -webkit-transition: opacity 1s ease-in;
+      -moz-transition: opacity 1s ease-in;
+      -o-transition: opacity 1s ease-in;
+      -ms-transition: opacity 1s ease-in;
+      transition: opacity 1s ease-in; }
+    .content-wrapper header .saved.fade {
+      opacity: 0;
+      visibility: visible; }
+  .content-wrapper section {
+    -webkit-padding-start: 18px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    max-width: 565px; }
+    .content-wrapper section h3 {
+      -webkit-margin-start: -18px;
+      color: black;
+      font-size: 1.2em;
+      margin-top: 0.8em;
+      margin-bottom: 0.8em; }
+    .content-wrapper section .setting-extra-description {
+      -webkit-margin-start: 1.8em;
+      color: #999; }
+
+footer {
+  border-top: 1px solid #eee;
+  margin-top: 16px;
+  padding: 8px 0;
+  text-align: right;
+  padding-right: 13px; }

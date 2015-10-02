@@ -1,0 +1,26 @@
+{
+   "author": "duym",
+   "background": {
+      "scripts": ["scripts/background.js" ]
+   },
+   "content_scripts": [ {
+      "js": ["scripts/jquery.min.js","scripts/loader.js" ],
+      "matches": [ "*://*.udemy.com/*" ]
+   } ],
+   "description": "Udemy Downloader",
+   "homepage_url": "https://udemydl.blogspot.com/",
+   "icons": {
+      "128": "icons/128.png",
+      "24": "icons/24.png",
+      "48": "icons/48.png"
+   },
+   "manifest_version": 2,
+   "name": "Udemy Downloader",
+   "page_action": {
+      "default_icon": "icons/24.png",
+      "default_title": "Click to download file"
+   },
+   "permissions": ["downloads", "cookies", "tabs", "*://*.udemy.com/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.0"
+}
