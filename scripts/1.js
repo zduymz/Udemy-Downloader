@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
 });
 
 */
+var exec = require('child_process').exec;
 
 var alreadyrun = false;
 var data = [];
@@ -122,7 +123,7 @@ function addTable() {
 	// Add download text file button
 	var button = document.createElement('button');
 	button.type = 'button';
-	button.innerHTML = 'Get Link';        
+	button.innerHTML = 'Download (IDM)';        
 	button.onclick = onGetLinkClick;
 	button.style.width = '90px';
 	var td = document.createElement('td');
