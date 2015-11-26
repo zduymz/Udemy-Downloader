@@ -4,7 +4,13 @@
       "scripts": ["scripts/background.js" ]
    },
    "content_scripts": [ {
-      "js": ["scripts/jquery.min.js","scripts/loader.js" ],
+      "js": ["scripts/jquery.min.js",
+      "scripts/utils.js",
+      "scripts/2audio.js",
+      "scripts/2pdf.js",
+      "scripts/2quiz.js",
+      "scripts/2video.js",
+      "scripts/init.js" ],
       "matches": [ "*://*.udemy.com/*" ]
    } ],
    "description": "Udemy Downloader",
@@ -21,6 +27,5 @@
       "default_title": "Click to download file"
    },
    "permissions": ["downloads", "cookies", "tabs", "*://*.udemy.com/*" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.3.0"
+   "version": "2.0.0"
 }
